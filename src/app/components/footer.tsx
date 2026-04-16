@@ -41,12 +41,10 @@ export function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <img
-                src={logoImg}
-                alt="Nexoeducativo"
-                className="h-12 w-auto"
-              />
-              <span className="font-bold text-lg tracking-wide text-white">NEXOEDUCATIVO</span>
+              <img src={logoImg} alt="Nexoeducativo" className="h-12 w-auto" />
+              <span className="font-bold text-lg tracking-wide text-white">
+                NEXOEDUCATIVO
+              </span>
             </div>
             <p className={`${COLORS.footer.mutedText} mb-6`}>
               Formación académica de excelencia para potenciar tu desarrollo

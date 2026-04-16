@@ -1,5 +1,6 @@
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { whatsappLink, COLORS } from "../constants";
+import { WhatsAppIcon } from "./whatsapp-icon";
 
 const WHATSAPP_LINK = whatsappLink(
   "Hola! Me gustaría recibir información sobre los programas de Nexoeducativo.",
@@ -40,7 +41,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className={`inline-flex items-center justify-center gap-2 px-8 py-4 ${COLORS.button.primary} rounded-lg font-semibold transition-all hover:scale-105 shadow-lg`}
               >
-                <MessageCircle className="w-5 h-5" />
+                <WhatsAppIcon className="w-5 h-5" />
                 Consultar por WhatsApp
               </a>
               <button

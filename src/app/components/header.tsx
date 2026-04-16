@@ -54,7 +54,9 @@ export function Header() {
                 alt="Nexoeducativo"
                 className="h-10 sm:h-12 w-auto object-contain"
               />
-              <span className="font-bold text-lg tracking-wide text-gray-900 dark:text-white">NEXOEDUCATIVO</span>
+              <span className="font-bold text-lg tracking-wide text-gray-900 dark:text-white">
+                NEXOEDUCATIVO
+              </span>
             </a>
 
             {/* Desktop Navigation */}

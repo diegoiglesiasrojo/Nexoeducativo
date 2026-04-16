@@ -1,5 +1,6 @@
-import { MessageCircle, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { whatsappLink, COLORS } from "../constants";
+import { WhatsAppIcon } from "./whatsapp-icon";
 
 const WHATSAPP_LINK = whatsappLink(
   "Hola! Quiero consultar sobre los programas de formación de Nexoeducativo.",
@@ -30,7 +31,7 @@ export function CtaSection() {
           rel="noopener noreferrer"
           className={`inline-flex items-center justify-center gap-3 px-10 py-5 ${COLORS.button.ctaWhite} rounded-xl font-bold text-lg transition-all hover:scale-105 shadow-2xl mb-12`}
         >
-          <MessageCircle className="w-6 h-6" />
+          <WhatsAppIcon className="w-6 h-6" />
           Consultar por WhatsApp
         </a>
 
@@ -44,7 +45,7 @@ export function CtaSection() {
             <div
               className={`${COLORS.icon.onBrandBg} w-12 h-12 rounded-full flex items-center justify-center`}
             >
-              <MessageCircle className="w-6 h-6" />
+              <WhatsAppIcon className="w-6 h-6" />
             </div>
             <div className="font-semibold">WhatsApp</div>
             <div className={`text-sm ${COLORS.text.onBrandMuted}`}>
