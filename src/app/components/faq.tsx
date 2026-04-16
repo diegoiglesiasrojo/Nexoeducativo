@@ -83,7 +83,7 @@ export function Faq() {
         <p className="text-center mt-8 text-gray-600 dark:text-gray-400">
           ¿Tenés otra consulta?{" "}
           <a
-            href="https://wa.me/XXXXXXXXXXX"
+            href={`https://wa.me/5492235391098?text=${encodeURIComponent("Hola! Tengo una consulta sobre los programas de Nexoeducativo.")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 dark:text-blue-400 hover:underline font-medium"

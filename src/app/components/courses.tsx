@@ -1,6 +1,6 @@
 import { GraduationCap, BookOpen, Users, Award } from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/XXXXXXXXXXX";
+const WHATSAPP_NUMBER = "5492235391098";
 
 const courses = [
   {
@@ -13,6 +13,8 @@ const courses = [
       "Certificación oficial",
       "Modalidad 100% online",
     ],
+    whatsappMessage:
+      "Hola! Me interesa obtener información sobre las Diplomaturas de Nexoeducativo.",
   },
   {
     icon: BookOpen,
@@ -24,6 +26,8 @@ const courses = [
       "Flexibilidad horaria",
       "Certificado de finalización",
     ],
+    whatsappMessage:
+      "Hola! Me interesa obtener información sobre las Actualizaciones Académicas de Nexoeducativo.",
   },
   {
     icon: Users,
@@ -35,6 +39,8 @@ const courses = [
       "Teoría y práctica",
       "Acompañamiento personalizado",
     ],
+    whatsappMessage:
+      "Hola! Me interesa obtener información sobre el Tramo Pedagógico de Nexoeducativo.",
   },
   {
     icon: Award,
@@ -46,15 +52,14 @@ const courses = [
       "Práctica en aula",
       "Tutoría académica",
     ],
+    whatsappMessage:
+      "Hola! Me interesa obtener información sobre la Formación Docente de Nexoeducativo.",
   },
 ];
 
 export function Courses() {
   return (
-    <section
-      id="cursos"
-      className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-800"
-    >
+    <section id="cursos" className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -69,10 +74,11 @@ export function Courses() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {courses.map((course, index) => {
             const Icon = course.icon;
+            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(course.whatsappMessage)}`;
             return (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-900 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100 dark:border-gray-700"
+                className="flex flex-col bg-white dark:bg-gray-900 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100 dark:border-gray-700"
               >
                 <div className="bg-blue-100 dark:bg-blue-900/30 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
                   <Icon className="w-7 h-7 text-blue-600 dark:text-blue-400" />
@@ -101,10 +107,10 @@ export function Courses() {
                 </ul>
 
                 <a
-                  href={WHATSAPP_LINK}
+                  href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+                  className="mt-auto block w-full text-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
                 >
                   Consultar
                 </a>

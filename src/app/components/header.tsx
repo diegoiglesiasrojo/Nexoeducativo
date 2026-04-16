@@ -3,7 +3,7 @@ import { Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import logoImg from "../../imports/logo.jpeg";
 
-const WHATSAPP_LINK = "https://wa.me/XXXXXXXXXXX";
+const WHATSAPP_LINK = `https://wa.me/5492235391098?text=${encodeURIComponent("Hola! Quiero más información sobre Nexoeducativo.")}`;
 
 const navLinks = [
   { href: "#inicio", label: "Inicio" },

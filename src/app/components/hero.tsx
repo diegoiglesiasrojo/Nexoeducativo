@@ -1,6 +1,6 @@
 import { ArrowRight, MessageCircle } from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/XXXXXXXXXXX";
+const WHATSAPP_LINK = `https://wa.me/5492235391098?text=${encodeURIComponent("Hola! Me gustaría recibir información sobre los programas de Nexoeducativo.")}`;
 
 export function Hero() {
   const scrollToCourses = () => {

@@ -1,6 +1,6 @@
 import { MessageCircle, Mail, Phone } from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/XXXXXXXXXXX";
+const WHATSAPP_LINK = `https://wa.me/5492235391098?text=${encodeURIComponent("Hola! Quiero consultar sobre los programas de formación de Nexoeducativo.")}`;
 
 export function CtaSection() {
   return (
@@ -42,7 +42,9 @@ export function CtaSection() {
               <Mail className="w-6 h-6" />
             </div>
             <div className="font-semibold">Email</div>
-            <div className="text-sm text-blue-100">info@nexoeducativo.com.ar</div>
+            <div className="text-sm text-blue-100">
+              info@nexoeducativo.com.ar
+            </div>
           </div>
 
           <div className="flex flex-col items-center gap-2 text-white">
