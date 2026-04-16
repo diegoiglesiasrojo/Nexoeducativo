@@ -1,11 +1,15 @@
+# NEXOEDUCATIVO
 
-  # WhatsApp Contact Form
+## Dependencias:
 
-  This is a code bundle for WhatsApp Contact Form. The original project is available at https://www.figma.com/design/KhMa52gCXYVzpDNp5A8qFV/WhatsApp-Contact-Form.
+NodeJS v22.14.0 o superior
 
-  ## Running the code
+## Instalacion:
 
-  Run `npm i` to install the dependencies.
+- Descargar este repositorio en su computadora.
 
-  Run `npm run dev` to start the development server.
-  
+- Abrir repositorio en Visual Studio Code o su IDE preferido.
+
+- En la terminal, descargar las dependencias de NodeJs con el comando npm i
+
+- Ejecutar la aplicacion usando el comando npm run dev

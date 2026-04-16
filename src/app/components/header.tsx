@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import logoImg from "../../imports/logo.jpeg";
+import logoImg from "../../imports/logo.png";
 import { whatsappLink, COLORS } from "../constants";
 
 const WHATSAPP_LINK = whatsappLink(
@@ -48,12 +48,13 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
-            <a href="#inicio" className="flex items-center z-50">
+            <a href="#inicio" className="flex items-center gap-2 z-50">
               <img
                 src={logoImg}
                 alt="Nexoeducativo"
                 className="h-10 sm:h-12 w-auto object-contain"
               />
+              <span className="font-bold text-lg tracking-wide text-gray-900 dark:text-white">NEXOEDUCATIVO</span>
             </a>
 
             {/* Desktop Navigation */}

@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
-import logoImg from "../../imports/logo.jpeg";
+import logoImg from "../../imports/logo.png";
 import {
   whatsappLink,
   SOCIAL_LINKS,
@@ -40,11 +40,14 @@ export function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-12">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <img
-              src={logoImg}
-              alt="Nexoeducativo"
-              className="h-12 w-auto mb-4"
-            />
+            <div className="flex items-center gap-2 mb-4">
+              <img
+                src={logoImg}
+                alt="Nexoeducativo"
+                className="h-12 w-auto"
+              />
+              <span className="font-bold text-lg tracking-wide text-white">NEXOEDUCATIVO</span>
+            </div>
             <p className={`${COLORS.footer.mutedText} mb-6`}>
               Formación académica de excelencia para potenciar tu desarrollo
               profesional.
