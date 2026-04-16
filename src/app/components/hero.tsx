@@ -14,7 +14,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className={`relative py-16 sm:py-20 lg:py-28 ${COLORS.section.heroGradient}`}
+      className={`relative overflow-hidden py-16 sm:py-20 lg:py-28 ${COLORS.section.heroGradient}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

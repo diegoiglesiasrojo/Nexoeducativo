@@ -2,7 +2,7 @@
 
 /* Override default slick styles for modern look */
 .carousel-container .slick-dots {
-  bottom: 20px;
+  bottom: 16px;
 }
 
 .carousel-container .slick-dots li button:before {

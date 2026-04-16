@@ -49,7 +49,7 @@ export function Carousel() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 <div
-                  className={`absolute bottom-0 left-0 right-0 p-6 sm:p-8 ${COLORS.text.white}`}
+                  className={`absolute inset-0 sm:inset-auto sm:bottom-0 sm:left-0 sm:right-0 flex flex-col items-center justify-center text-center sm:block sm:text-left px-6 sm:px-8 pt-6 sm:pt-8 pb-14 sm:pb-16 ${COLORS.text.white}`}
                 >
                   <h3 className="text-2xl sm:text-3xl font-bold mb-2">
                     {image.title}
