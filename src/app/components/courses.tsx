@@ -1,5 +1,5 @@
 import { GraduationCap, BookOpen, Users, Award } from "lucide-react";
-import { WHATSAPP_NUMBER } from "../constants";
+import { WHATSAPP_NUMBER, COLORS } from "../constants";
 
 const courses = [
   {
@@ -58,13 +58,20 @@ const courses = [
 
 export function Courses() {
   return (
-    <section id="cursos" className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-800">
+    <section
+      id="cursos"
+      className={`py-16 sm:py-20 ${COLORS.section.secondary}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2
+            className={`text-3xl sm:text-4xl lg:text-5xl font-bold ${COLORS.text.heading} mb-4`}
+          >
             Nuestros Programas
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p
+            className={`text-lg sm:text-xl ${COLORS.text.body} max-w-3xl mx-auto`}
+          >
             Descubrí la propuesta académica que impulsará tu crecimiento
             profesional
           </p>
@@ -77,17 +84,19 @@ export function Courses() {
             return (
               <div
                 key={index}
-                className="flex flex-col bg-white dark:bg-gray-900 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100 dark:border-gray-700"
+                className={`flex flex-col ${COLORS.card.default} rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1`}
               >
-                <div className="bg-blue-100 dark:bg-blue-900/30 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-                  <Icon className="w-7 h-7 text-blue-600 dark:text-blue-400" />
+                <div
+                  className={`${COLORS.icon.brandBgLight} w-14 h-14 rounded-xl flex items-center justify-center mb-6`}
+                >
+                  <Icon className="w-7 h-7" />
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                <h3 className={`text-xl font-bold ${COLORS.text.heading} mb-3`}>
                   {course.title}
                 </h3>
 
-                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                <p className={`${COLORS.text.muted} mb-6`}>
                   {course.description}
                 </p>
 
@@ -95,9 +104,9 @@ export function Courses() {
                   {course.benefits.map((benefit, idx) => (
                     <li
                       key={idx}
-                      className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400"
+                      className={`flex items-start gap-2 text-sm ${COLORS.text.muted}`}
                     >
-                      <span className="text-blue-600 dark:text-blue-400 mt-0.5">
+                      <span className={`${COLORS.icon.brandColor} mt-0.5`}>
                         ✓
                       </span>
                       {benefit}
@@ -109,7 +118,7 @@ export function Courses() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-auto block w-full text-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+                  className={`mt-auto block w-full text-center px-6 py-3 ${COLORS.button.primary} rounded-lg font-medium transition-colors`}
                 >
                   Consultar
                 </a>

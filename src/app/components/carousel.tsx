@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { COLORS } from "../constants";
 
 const carouselImages = [
   {
@@ -35,7 +36,7 @@ export function Carousel() {
   };
 
   return (
-    <section className="py-12 sm:py-16 bg-white dark:bg-gray-900">
+    <section className={`py-12 sm:py-16 ${COLORS.section.primary}`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <Slider {...settings} className="carousel-container">
           {carouselImages.map((image, index) => (
@@ -47,11 +48,15 @@ export function Carousel() {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
+                <div
+                  className={`absolute bottom-0 left-0 right-0 p-6 sm:p-8 ${COLORS.text.white}`}
+                >
                   <h3 className="text-2xl sm:text-3xl font-bold mb-2">
                     {image.title}
                   </h3>
-                  <p className="text-base sm:text-lg text-gray-200">
+                  <p
+                    className={`text-base sm:text-lg ${COLORS.text.carouselCaption}`}
+                  >
                     {image.description}
                   </p>
                 </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { whatsappLink } from "../constants";
+import { whatsappLink, COLORS } from "../constants";
 
 const faqs = [
   {
@@ -39,24 +39,22 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-200 dark:border-gray-700 last:border-b-0">
+    <div className={`border-b ${COLORS.border.faqItem} last:border-b-0`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-5 px-6 flex items-center justify-between text-left hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+        className={`w-full py-5 px-6 flex items-center justify-between text-left ${COLORS.nav.faqHover} transition-colors`}
       >
-        <span className="font-semibold text-gray-900 dark:text-white pr-8">
+        <span className={`font-semibold ${COLORS.text.heading} pr-8`}>
           {question}
         </span>
         <ChevronDown
-          className={`w-5 h-5 text-gray-600 dark:text-gray-400 transition-transform flex-shrink-0 ${
+          className={`w-5 h-5 ${COLORS.text.icon} transition-transform flex-shrink-0 ${
             isOpen ? "rotate-180" : ""
           }`}
         />
       </button>
       {isOpen && (
-        <div className="px-6 pb-5 text-gray-600 dark:text-gray-300">
-          {answer}
-        </div>
+        <div className={`px-6 pb-5 ${COLORS.text.body}`}>{answer}</div>
       )}
     </div>
   );
@@ -64,24 +62,28 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
 
 export function Faq() {
   return (
-    <section id="faq" className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="faq" className={`py-16 sm:py-20 ${COLORS.section.secondary}`}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2
+            className={`text-3xl sm:text-4xl lg:text-5xl font-bold ${COLORS.text.heading} mb-4`}
+          >
             Preguntas Frecuentes
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300">
+          <p className={`text-lg sm:text-xl ${COLORS.text.body}`}>
             Resolvé tus dudas antes de comenzar
           </p>
         </div>
 
-        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden">
+        <div
+          className={`${COLORS.card.faqContainer} rounded-2xl shadow-lg overflow-hidden`}
+        >
           {faqs.map((faq, index) => (
             <FaqItem key={index} question={faq.question} answer={faq.answer} />
           ))}
         </div>
 
-        <p className="text-center mt-8 text-gray-600 dark:text-gray-400">
+        <p className={`text-center mt-8 ${COLORS.text.muted}`}>
           ¿Tenés otra consulta?{" "}
           <a
             href={whatsappLink(
@@ -89,7 +91,7 @@ export function Faq() {
             )}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+            className={`${COLORS.text.brand} hover:underline font-medium`}
           >
             Contactanos por WhatsApp
           </a>

@@ -1,5 +1,5 @@
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { whatsappLink } from "../constants";
+import { whatsappLink, COLORS } from "../constants";
 
 const WHATSAPP_LINK = whatsappLink(
   "Hola! Me gustaría recibir información sobre los programas de Nexoeducativo.",
@@ -13,19 +13,21 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative py-16 sm:py-20 lg:py-28 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800"
+      className={`relative py-16 sm:py-20 lg:py-28 ${COLORS.section.heroGradient}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1
+              className={`text-4xl sm:text-5xl lg:text-6xl font-bold ${COLORS.text.heading} mb-6`}
+            >
               Transformá tu Carrera con{" "}
-              <span className="text-blue-600 dark:text-blue-400">
-                Formación Académica
-              </span>
+              <span className={COLORS.text.brand}>Formación Académica</span>
             </h1>
-            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
+            <p
+              className={`text-lg sm:text-xl ${COLORS.text.body} mb-8 max-w-2xl mx-auto lg:mx-0`}
+            >
               Diplomaturas, actualizaciones académicas y formación docente de
               calidad. Potenciá tu desarrollo profesional con Nexoeducativo.
             </p>
@@ -36,14 +38,14 @@ export function Hero() {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-all hover:scale-105 shadow-lg"
+                className={`inline-flex items-center justify-center gap-2 px-8 py-4 ${COLORS.button.primary} rounded-lg font-semibold transition-all hover:scale-105 shadow-lg`}
               >
                 <MessageCircle className="w-5 h-5" />
                 Consultar por WhatsApp
               </a>
               <button
                 onClick={scrollToCourses}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white rounded-lg font-semibold transition-all border border-gray-200 dark:border-gray-700"
+                className={`inline-flex items-center justify-center gap-2 px-8 py-4 ${COLORS.button.secondary} rounded-lg font-semibold transition-all`}
               >
                 Ver Cursos
                 <ArrowRight className="w-5 h-5" />
@@ -53,26 +55,32 @@ export function Hero() {
             {/* Trust Indicators */}
             <div className="mt-12 grid grid-cols-3 gap-6 sm:gap-8">
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-blue-600 dark:text-blue-400">
+                <div
+                  className={`text-3xl sm:text-4xl font-bold ${COLORS.text.brand}`}
+                >
                   500+
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                <div className={`text-sm ${COLORS.text.muted} mt-1`}>
                   Estudiantes
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-blue-600 dark:text-blue-400">
+                <div
+                  className={`text-3xl sm:text-4xl font-bold ${COLORS.text.brand}`}
+                >
                   15+
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                <div className={`text-sm ${COLORS.text.muted} mt-1`}>
                   Cursos
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-blue-600 dark:text-blue-400">
+                <div
+                  className={`text-3xl sm:text-4xl font-bold ${COLORS.text.brand}`}
+                >
                   100%
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                <div className={`text-sm ${COLORS.text.muted} mt-1`}>
                   Online
                 </div>
               </div>

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import logoImg from "../../imports/logo.jpeg";
-import { whatsappLink } from "../constants";
+import { whatsappLink, COLORS } from "../constants";
 
 const WHATSAPP_LINK = whatsappLink(
   "Hola! Quiero más información sobre Nexoeducativo.",
@@ -62,7 +62,7 @@ export function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className={`text-sm font-medium ${COLORS.nav.link} transition-colors`}
                 >
                   {link.label}
                 </a>
@@ -74,13 +74,13 @@ export function Header() {
               {mounted && (
                 <button
                   onClick={toggleTheme}
-                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  className={`p-2 rounded-lg ${COLORS.nav.hoverBg} transition-colors`}
                   aria-label="Cambiar tema"
                 >
                   {theme === "dark" ? (
-                    <Sun className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                    <Sun className={`w-5 h-5 ${COLORS.text.icon}`} />
                   ) : (
-                    <Moon className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                    <Moon className={`w-5 h-5 ${COLORS.text.icon}`} />
                   )}
                 </button>
               )}
@@ -88,7 +88,7 @@ export function Header() {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+                className={`px-6 py-2.5 ${COLORS.button.primary} rounded-lg font-medium transition-colors`}
               >
                 Consultar por WhatsApp
               </a>
@@ -99,25 +99,25 @@ export function Header() {
               {mounted && (
                 <button
                   onClick={toggleTheme}
-                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  className={`p-2 rounded-lg ${COLORS.nav.hoverBg} transition-colors`}
                   aria-label="Cambiar tema"
                 >
                   {theme === "dark" ? (
-                    <Sun className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                    <Sun className={`w-5 h-5 ${COLORS.text.icon}`} />
                   ) : (
-                    <Moon className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                    <Moon className={`w-5 h-5 ${COLORS.text.icon}`} />
                   )}
                 </button>
               )}
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className={`p-2 rounded-lg ${COLORS.nav.hoverBg} transition-colors`}
                 aria-label="Menú"
               >
                 {isOpen ? (
-                  <X className="w-6 h-6 text-gray-600 dark:text-gray-400" />
+                  <X className={`w-6 h-6 ${COLORS.text.icon}`} />
                 ) : (
-                  <Menu className="w-6 h-6 text-gray-600 dark:text-gray-400" />
+                  <Menu className={`w-6 h-6 ${COLORS.text.icon}`} />
                 )}
               </button>
             </div>
@@ -130,19 +130,21 @@ export function Header() {
         <>
           {/* Backdrop */}
           <div
-            className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+            className={`fixed inset-0 ${COLORS.nav.backdrop} z-40 lg:hidden`}
             onClick={() => setIsOpen(false)}
           />
 
           {/* Menu Panel */}
-          <div className="fixed top-16 sm:top-20 left-0 right-0 bottom-0 bg-white dark:bg-gray-900 z-40 lg:hidden overflow-y-auto">
+          <div
+            className={`fixed top-16 sm:top-20 left-0 right-0 bottom-0 ${COLORS.section.primary} z-40 lg:hidden overflow-y-auto`}
+          >
             <nav className="flex flex-col p-4 gap-2">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  className={`px-4 py-3 rounded-lg ${COLORS.nav.mobileLink} transition-colors`}
                 >
                   {link.label}
                 </a>
@@ -152,7 +154,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="mt-4 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-center rounded-lg font-medium transition-colors"
+                className={`mt-4 px-6 py-3 ${COLORS.button.primary} text-center rounded-lg font-medium transition-colors`}
               >
                 Consultar por WhatsApp
               </a>
