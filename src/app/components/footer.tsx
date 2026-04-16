@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 import logoImg from "../../imports/logo.jpeg";
+import { whatsappLink, SOCIAL_LINKS, ENCIENDE_NEGOCIO_URL } from "../constants";
 
 const footerLinks = {
   navigation: [
@@ -19,10 +20,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:info@nexoeducativo.com.ar", label: "Email" },
+  { icon: Facebook, href: SOCIAL_LINKS.facebook, label: "Facebook" },
+  { icon: Instagram, href: SOCIAL_LINKS.instagram, label: "Instagram" },
+  { icon: Linkedin, href: SOCIAL_LINKS.linkedin, label: "LinkedIn" },
+  { icon: Mail, href: SOCIAL_LINKS.email, label: "Email" },
 ];
 
 export function Footer() {
@@ -102,7 +103,9 @@ export function Footer() {
             <ul className="space-y-3 text-gray-400">
               <li>
                 <a
-                  href={`https://wa.me/5492235391098?text=${encodeURIComponent("Hola! Quiero contactarme con Nexoeducativo.")}`}
+                  href={whatsappLink(
+                    "Hola! Quiero contactarme con Nexoeducativo.",
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
@@ -127,6 +130,14 @@ export function Footer() {
         <div className="pt-8 border-t border-gray-800">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
             <p>© {currentYear} Nexoeducativo. Todos los derechos reservados.</p>
+            <a
+              href={ENCIENDE_NEGOCIO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              Desarrollado por Enciende Negocio
+            </a>
             <div className="flex gap-6">
               <a href="#" className="hover:text-white transition-colors">
                 Política de Privacidad

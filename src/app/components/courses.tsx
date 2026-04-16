@@ -1,6 +1,5 @@
 import { GraduationCap, BookOpen, Users, Award } from "lucide-react";
-
-const WHATSAPP_NUMBER = "5492235391098";
+import { WHATSAPP_NUMBER } from "../constants";
 
 const courses = [
   {

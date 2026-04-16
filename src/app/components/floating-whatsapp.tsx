@@ -1,4 +1,8 @@
-const WHATSAPP_LINK = `https://wa.me/5492235391098?text=${encodeURIComponent("Hola! Necesito información sobre los programas de Nexoeducativo.")}`;
+import { whatsappLink } from "../constants";
+
+const WHATSAPP_LINK = whatsappLink(
+  "Hola! Necesito información sobre los programas de Nexoeducativo.",
+);
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (

@@ -1,6 +1,9 @@
 import { MessageCircle, Mail, Phone } from "lucide-react";
+import { whatsappLink } from "../constants";
 
-const WHATSAPP_LINK = `https://wa.me/5492235391098?text=${encodeURIComponent("Hola! Quiero consultar sobre los programas de formación de Nexoeducativo.")}`;
+const WHATSAPP_LINK = whatsappLink(
+  "Hola! Quiero consultar sobre los programas de formación de Nexoeducativo.",
+);
 
 export function CtaSection() {
   return (
