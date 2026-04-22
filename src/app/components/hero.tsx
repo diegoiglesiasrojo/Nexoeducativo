@@ -69,16 +69,6 @@ export function Hero() {
                 <div
                   className={`text-3xl sm:text-4xl font-bold ${COLORS.text.brand}`}
                 >
-                  15+
-                </div>
-                <div className={`text-sm ${COLORS.text.muted} mt-1`}>
-                  Cursos
-                </div>
-              </div>
-              <div className="text-center">
-                <div
-                  className={`text-3xl sm:text-4xl font-bold ${COLORS.text.brand}`}
-                >
                   100%
                 </div>
                 <div className={`text-sm ${COLORS.text.muted} mt-1`}>

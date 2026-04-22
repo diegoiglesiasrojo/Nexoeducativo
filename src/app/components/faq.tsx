@@ -6,27 +6,22 @@ const faqs = [
   {
     question: "¿Cómo es la modalidad de cursada?",
     answer:
-      "Todos nuestros cursos son 100% online y en modalidad asincrónica. Podés acceder al material, las clases grabadas y las actividades en cualquier momento del día, desde cualquier dispositivo con conexión a internet. Respetamos tu tiempo y te brindamos la flexibilidad que necesitás.",
+      "Todos nuestros postitulos son 100% online y en modalidad asincrónica. Podés acceder al material, las clases grabadas y las actividades en cualquier momento del día, desde cualquier dispositivo con conexión a internet. Respetamos tu tiempo y te brindamos la flexibilidad que necesitás.",
   },
   {
     question: "¿Los certificados tienen validez oficial?",
     answer:
-      "Sí, nuestras diplomaturas y programas de formación cuentan con certificación oficial y reconocimiento académico. Los certificados son emitidos con validez nacional y pueden ser utilizados para puntaje docente, ascensos y desarrollo profesional.",
+      "Sí, nuestros postitulos  cuentan con certificación oficial y reconocimiento académico. Los certificados son emitidos con validez nacional y pueden ser utilizados para puntaje docente, ascensos y desarrollo profesional.",
   },
   {
     question: "¿Cuál es el proceso de inscripción?",
     answer:
-      "El proceso es muy simple: contactanos por WhatsApp, te enviaremos toda la información del curso que te interesa, y te guiaremos paso a paso en el registro. Solo necesitás completar un formulario básico y realizar el pago de la matrícula para comenzar.",
+      "El proceso es muy simple: contactanos por WhatsApp, te enviaremos toda la información del postitulo que te interesa, y te guiaremos paso a paso en la inscripción. Solo necesitas completar un formulario basico.",
   },
   {
     question: "¿Qué tipo de acompañamiento ofrecen durante el curso?",
     answer:
       "Contás con un equipo de tutores especializados disponibles para resolver tus consultas académicas durante todo el curso. Además, ofrecemos soporte técnico para cualquier dificultad con la plataforma. Nuestro objetivo es que te sientas acompañado en todo momento.",
-  },
-  {
-    question: "¿Cuánto dura cada programa?",
-    answer:
-      "La duración varía según el programa: las diplomaturas tienen una duración de 6 a 12 meses, las actualizaciones académicas de 2 a 4 meses, y el tramo pedagógico de 8 a 10 meses. Cada programa tiene fechas de inicio flexibles durante el año.",
   },
   {
     question: "¿Puedo pagar en cuotas?",
