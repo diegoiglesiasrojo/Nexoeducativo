@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, Moon, Sun, ChevronDown } from "lucide-react";
 import { Link } from "react-router";
 import { useTheme } from "next-themes";
 import logoImg from "../../imports/logo.png";
@@ -8,6 +8,13 @@ import { whatsappLink, COLORS } from "../constants";
 const WHATSAPP_LINK = whatsappLink(
   "Hola! Quiero más información sobre Nexoeducativo.",
 );
+
+const courseSubLinks = [
+  { href: "/diplomaturas", label: "Diplomaturas" },
+  { href: "/actualizaciones", label: "Actualizaciones Académicas" },
+  { href: "/tramos", label: "Tramo Pedagógico" },
+  { href: "/especializaciones", label: "Especialización Docente" },
+];
 
 const navLinks = [
   { href: "/#inicio", label: "Inicio" },
@@ -21,6 +28,9 @@ const navLinks = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [coursesOpen, setCoursesOpen] = useState(false);
+  const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
+  const coursesRef = useRef<HTMLDivElement>(null);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
@@ -38,6 +48,19 @@ export function Header() {
       document.body.style.overflow = "unset";
     };
   }, [isOpen]);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (
+        coursesRef.current &&
+        !coursesRef.current.contains(e.target as Node)
+      ) {
+        setCoursesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -62,15 +85,43 @@ export function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={`text-sm font-medium ${COLORS.nav.link} transition-colors`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.label === "Cursos" ? (
+                  <div key="cursos" className="relative" ref={coursesRef}>
+                    <button
+                      onClick={() => setCoursesOpen((o) => !o)}
+                      className={`flex items-center gap-1 text-sm font-medium ${COLORS.nav.link} transition-colors`}
+                    >
+                      Cursos
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform ${coursesOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                    {coursesOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 py-2 z-50">
+                        {courseSubLinks.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            to={sub.href}
+                            onClick={() => setCoursesOpen(false)}
+                            className="block px-4 py-2.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className={`text-sm font-medium ${COLORS.nav.link} transition-colors`}
+                  >
+                    {link.label}
+                  </Link>
+                ),
+              )}
             </nav>
 
             {/* Desktop Actions */}
@@ -143,16 +194,47 @@ export function Header() {
             className={`fixed top-16 sm:top-20 left-0 right-0 bottom-0 ${COLORS.section.primary} z-40 lg:hidden overflow-y-auto`}
           >
             <nav className="flex flex-col p-4 gap-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`px-4 py-3 rounded-lg ${COLORS.nav.mobileLink} transition-colors`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.label === "Cursos" ? (
+                  <div key="cursos">
+                    <button
+                      onClick={() => setMobileCoursesOpen((o) => !o)}
+                      className={`w-full flex items-center justify-between px-4 py-3 rounded-lg ${COLORS.nav.mobileLink} transition-colors`}
+                    >
+                      Cursos
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform ${mobileCoursesOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                    {mobileCoursesOpen && (
+                      <div className="ml-4 flex flex-col gap-1 mt-1">
+                        {courseSubLinks.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            to={sub.href}
+                            onClick={() => {
+                              setIsOpen(false);
+                              setMobileCoursesOpen(false);
+                            }}
+                            className={`px-4 py-2.5 rounded-lg text-sm ${COLORS.nav.mobileLink} transition-colors`}
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`px-4 py-3 rounded-lg ${COLORS.nav.mobileLink} transition-colors`}
+                  >
+                    {link.label}
+                  </Link>
+                ),
+              )}
               <a
                 href={WHATSAPP_LINK}
                 target="_blank"

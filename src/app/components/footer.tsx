@@ -1,4 +1,5 @@
-import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Facebook, Instagram, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { Link } from "react-router";
 import logoImg from "../../imports/logo.png";
 import {
@@ -38,6 +39,21 @@ const emailLink = {
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const [coursesOpen, setCoursesOpen] = useState(false);
+  const coursesRef = useRef<HTMLLIElement>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (
+        coursesRef.current &&
+        !coursesRef.current.contains(e.target as Node)
+      ) {
+        setCoursesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
 
   return (
     <footer className={`${COLORS.section.footer} ${COLORS.footer.text}`}>
@@ -90,16 +106,44 @@ export function Footer() {
               Navegación
             </h3>
             <ul className="space-y-2">
-              {footerLinks.navigation.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    to={link.href}
-                    className={`${COLORS.footer.link} transition-colors`}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {footerLinks.navigation.map((link) =>
+                link.label === "Cursos" ? (
+                  <li key="cursos" className="relative" ref={coursesRef}>
+                    <button
+                      onClick={() => setCoursesOpen((o) => !o)}
+                      className={`flex items-center gap-1 ${COLORS.footer.link} transition-colors`}
+                    >
+                      Cursos
+                      <ChevronDown
+                        className={`w-3 h-3 transition-transform ${coursesOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                    {coursesOpen && (
+                      <div className="absolute bottom-full left-0 mb-2 w-56 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 py-2 z-50">
+                        {footerLinks.courses.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            to={sub.href}
+                            onClick={() => setCoursesOpen(false)}
+                            className="block px-4 py-2.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </li>
+                ) : (
+                  <li key={link.label}>
+                    <Link
+                      to={link.href}
+                      className={`${COLORS.footer.link} transition-colors`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ),
+              )}
             </ul>
           </div>
 
