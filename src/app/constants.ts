@@ -4,7 +4,7 @@ export const whatsappLink = (message: string): string =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
 export const SOCIAL_LINKS = {
-  facebook: "https://enciendenegocio.com/",
+  facebook: "https://www.facebook.com/people/Nexo-Educativo/61569233333197/",
   instagram: "https://www.instagram.com/nexo_educativo_arg",
   email: "Nexoeducativo26@gmail.com",
 };
