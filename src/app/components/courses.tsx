@@ -1,5 +1,6 @@
 import { GraduationCap, BookOpen, Users, Award } from "lucide-react";
-import { WHATSAPP_NUMBER, COLORS } from "../constants";
+import { Link } from "react-router";
+import { COLORS } from "../constants";
 
 const courses = [
   {
@@ -12,8 +13,7 @@ const courses = [
       "Certificación oficial",
       "Modalidad 100% online",
     ],
-    whatsappMessage:
-      "Hola! Me interesa obtener información sobre las Diplomaturas de Nexoeducativo.",
+    path: "/diplomaturas",
   },
   {
     icon: BookOpen,
@@ -25,8 +25,7 @@ const courses = [
       "Flexibilidad horaria",
       "Certificado de finalización",
     ],
-    whatsappMessage:
-      "Hola! Me interesa obtener información sobre las Actualizaciones Académicas de Nexoeducativo.",
+    path: "/actualizaciones",
   },
   {
     icon: Users,
@@ -38,12 +37,11 @@ const courses = [
       "Teoría y práctica",
       "Acompañamiento personalizado",
     ],
-    whatsappMessage:
-      "Hola! Me interesa obtener información sobre el Tramo Pedagógico de Nexoeducativo.",
+    path: "/tramos",
   },
   {
     icon: Award,
-    title: "Formación Docente",
+    title: "Especialización Docente",
     description:
       "Capacitación integral para educadores en ejercicio que buscan perfeccionar sus competencias pedagógicas.",
     benefits: [
@@ -51,8 +49,7 @@ const courses = [
       "Práctica en aula",
       "Tutoría académica",
     ],
-    whatsappMessage:
-      "Hola! Me interesa obtener información sobre la Formación Docente de Nexoeducativo.",
+    path: "/especializaciones",
   },
 ];
 
@@ -80,7 +77,6 @@ export function Courses() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {courses.map((course, index) => {
             const Icon = course.icon;
-            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(course.whatsappMessage)}`;
             return (
               <div
                 key={index}
@@ -114,14 +110,12 @@ export function Courses() {
                   ))}
                 </ul>
 
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to={course.path}
                   className={`mt-auto block w-full text-center px-6 py-3 ${COLORS.button.primary} rounded-lg font-medium transition-colors`}
                 >
                   Consultar
-                </a>
+                </Link>
               </div>
             );
           })}
