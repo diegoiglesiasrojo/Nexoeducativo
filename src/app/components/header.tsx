@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
+import { Link } from "react-router";
 import { useTheme } from "next-themes";
 import logoImg from "../../imports/logo.png";
 import { whatsappLink, COLORS } from "../constants";
@@ -9,12 +10,12 @@ const WHATSAPP_LINK = whatsappLink(
 );
 
 const navLinks = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#cursos", label: "Cursos" },
-  { href: "#beneficios", label: "Beneficios" },
-  { href: "#testimonios", label: "Testimonios" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#inicio", label: "Inicio" },
+  { href: "/#cursos", label: "Cursos" },
+  { href: "/#beneficios", label: "Beneficios" },
+  { href: "/#testimonios", label: "Testimonios" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export function Header() {
@@ -48,7 +49,7 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
-            <a href="#inicio" className="flex items-center gap-2 z-50">
+            <Link to="/#inicio" className="flex items-center gap-2 z-50">
               <img
                 src={logoImg}
                 alt="Nexoeducativo"
@@ -57,18 +58,18 @@ export function Header() {
               <span className="font-bold text-lg tracking-wide text-gray-900 dark:text-white">
                 NEXOEDUCATIVO
               </span>
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   className={`text-sm font-medium ${COLORS.nav.link} transition-colors`}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -143,14 +144,14 @@ export function Header() {
           >
             <nav className="flex flex-col p-4 gap-2">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setIsOpen(false)}
                   className={`px-4 py-3 rounded-lg ${COLORS.nav.mobileLink} transition-colors`}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <a
                 href={WHATSAPP_LINK}

@@ -6,7 +6,7 @@ export const whatsappLink = (message: string): string =>
 export const SOCIAL_LINKS = {
   facebook: "https://www.facebook.com/people/Nexo-Educativo/61569233333197/",
   instagram: "https://www.instagram.com/nexo_educativo_arg",
-  email: "Nexoeducativo26@gmail.com",
+  email: "nexoeducativo26@gmail.com",
 };
 
 export const ENCIENDE_NEGOCIO_URL = "https://enciendenegocio.com/";

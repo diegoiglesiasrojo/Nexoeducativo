@@ -114,7 +114,7 @@ export function Courses() {
                   to={course.path}
                   className={`mt-auto block w-full text-center px-6 py-3 ${COLORS.button.primary} rounded-lg font-medium transition-colors`}
                 >
-                  Consultar
+                  Ver cursos
                 </Link>
               </div>
             );

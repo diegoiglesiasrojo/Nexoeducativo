@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
+import { Link } from "react-router";
 import logoImg from "../../imports/logo.png";
 import {
   whatsappLink,
@@ -9,26 +10,31 @@ import {
 
 const footerLinks = {
   navigation: [
-    { label: "Inicio", href: "#inicio" },
-    { label: "Cursos", href: "#cursos" },
-    { label: "Beneficios", href: "#beneficios" },
-    { label: "Testimonios", href: "#testimonios" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Contacto", href: "#contacto" },
+    { label: "Inicio", href: "/#inicio" },
+    { label: "Cursos", href: "/#cursos" },
+    { label: "Beneficios", href: "/#beneficios" },
+    { label: "Testimonios", href: "/#testimonios" },
+    { label: "FAQ", href: "/#faq" },
+    { label: "Contacto", href: "/#contacto" },
   ],
   courses: [
-    { label: "Diplomaturas", href: "#cursos" },
-    { label: "Actualizaciones Académicas", href: "#cursos" },
-    { label: "Tramo Pedagógico", href: "#cursos" },
-    { label: "Formación Docente", href: "#cursos" },
+    { label: "Diplomaturas", href: "/diplomaturas" },
+    { label: "Actualizaciones Académicas", href: "/actualizaciones" },
+    { label: "Tramo Pedagógico", href: "/tramos" },
+    { label: "Especialización Docente", href: "/especializaciones" },
   ],
 };
 
 const socialLinks = [
   { icon: Facebook, href: SOCIAL_LINKS.facebook, label: "Facebook" },
   { icon: Instagram, href: SOCIAL_LINKS.instagram, label: "Instagram" },
-  { icon: Mail, href: `mailto:${SOCIAL_LINKS.email}`, label: "Email" },
 ];
+
+const emailLink = {
+  icon: Mail,
+  href: `mailto:${SOCIAL_LINKS.email}`,
+  label: "Email",
+};
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -56,10 +62,8 @@ export function Footer() {
                   <a
                     key={social.label}
                     href={social.href}
-                    {...(!social.href.startsWith("mailto:") && {
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                    })}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`${COLORS.footer.socialIcon} w-10 h-10 rounded-full flex items-center justify-center transition-colors`}
                     aria-label={social.label}
                   >
@@ -67,6 +71,16 @@ export function Footer() {
                   </a>
                 );
               })}
+              <a
+                href={emailLink.href}
+                onClick={() =>
+                  navigator.clipboard.writeText(SOCIAL_LINKS.email)
+                }
+                className={`${COLORS.footer.socialIcon} w-10 h-10 rounded-full flex items-center justify-center transition-colors`}
+                aria-label={emailLink.label}
+              >
+                <emailLink.icon className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
@@ -78,12 +92,12 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.navigation.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className={`${COLORS.footer.link} transition-colors`}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -97,12 +111,12 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.courses.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className={`${COLORS.footer.link} transition-colors`}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
