@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = "5492235475939";
+export const WHATSAPP_NUMBER = "5492236053637"; // +54 9 223 605-3637
 
 export const whatsappLink = (message: string): string =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -6,8 +6,7 @@ export const whatsappLink = (message: string): string =>
 export const SOCIAL_LINKS = {
   facebook: "https://enciendenegocio.com/",
   instagram: "https://enciendenegocio.com/",
-  linkedin: "https://enciendenegocio.com/",
-  email: "mailto:info@nexoeducativo.com.ar",
+  email: "Nexoeducativo26@gmail.com",
 };
 
 export const ENCIENDE_NEGOCIO_URL = "https://enciendenegocio.com/";

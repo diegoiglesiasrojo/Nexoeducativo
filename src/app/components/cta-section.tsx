@@ -1,5 +1,5 @@
 import { Mail, Phone } from "lucide-react";
-import { whatsappLink, COLORS } from "../constants";
+import { whatsappLink, COLORS, SOCIAL_LINKS } from "../constants";
 import { WhatsAppIcon } from "./whatsapp-icon";
 
 const WHATSAPP_LINK = whatsappLink(
@@ -63,7 +63,7 @@ export function CtaSection() {
             </div>
             <div className="font-semibold">Email</div>
             <div className={`text-sm ${COLORS.text.onBrandMuted}`}>
-              info@nexoeducativo.com.ar
+              {SOCIAL_LINKS.email}
             </div>
           </div>
 
@@ -77,7 +77,7 @@ export function CtaSection() {
             </div>
             <div className="font-semibold">Teléfono</div>
             <div className={`text-sm ${COLORS.text.onBrandMuted}`}>
-              Lun a Vie 9-18hs
+              Lun a Sab 9-18hs
             </div>
           </div>
         </div>

@@ -27,8 +27,7 @@ const footerLinks = {
 const socialLinks = [
   { icon: Facebook, href: SOCIAL_LINKS.facebook, label: "Facebook" },
   { icon: Instagram, href: SOCIAL_LINKS.instagram, label: "Instagram" },
-  { icon: Linkedin, href: SOCIAL_LINKS.linkedin, label: "LinkedIn" },
-  { icon: Mail, href: SOCIAL_LINKS.email, label: "Email" },
+  { icon: Mail, href: `mailto:${SOCIAL_LINKS.email}`, label: "Email" },
 ];
 
 export function Footer() {
@@ -57,8 +56,10 @@ export function Footer() {
                   <a
                     key={social.label}
                     href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...(!social.href.startsWith("mailto:") && {
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                    })}
                     className={`${COLORS.footer.socialIcon} w-10 h-10 rounded-full flex items-center justify-center transition-colors`}
                     aria-label={social.label}
                   >
@@ -127,10 +128,10 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:info@nexoeducativo.com.ar"
+                  href={`mailto:${SOCIAL_LINKS.email}`}
                   className={`${COLORS.footer.link} transition-colors`}
                 >
-                  info@nexoeducativo.com.ar
+                  {SOCIAL_LINKS.email}
                 </a>
               </li>
               <li className="text-sm">Buenos Aires, Argentina</li>
@@ -152,14 +153,6 @@ export function Footer() {
             >
               Desarrollado por Enciende Negocio
             </a>
-            <div className="flex gap-6">
-              <a href="#" className={`${COLORS.footer.link} transition-colors`}>
-                Política de Privacidad
-              </a>
-              <a href="#" className={`${COLORS.footer.link} transition-colors`}>
-                Términos y Condiciones
-              </a>
-            </div>
           </div>
         </div>
       </div>
