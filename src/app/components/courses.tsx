@@ -53,7 +53,7 @@ const courses = [
   },
 ];
 
-export function Courses() {
+export const Courses = () => {
   return (
     <section
       id="cursos"

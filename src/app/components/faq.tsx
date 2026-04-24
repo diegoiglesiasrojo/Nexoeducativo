@@ -30,7 +30,7 @@ const faqs = [
   },
 ];
 
-function FaqItem({ question, answer }: { question: string; answer: string }) {
+const FaqItem = ({ question, answer }: { question: string; answer: string }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -55,7 +55,7 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
   );
 }
 
-export function Faq() {
+export const Faq = () => {
   return (
     <section id="faq" className={`py-16 sm:py-20 ${COLORS.section.secondary}`}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

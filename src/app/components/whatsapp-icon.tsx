@@ -1,4 +1,4 @@
-export function WhatsAppIcon({ className }: { className?: string }) {
+export const WhatsAppIcon = ({ className }: { className?: string }) => {
   return (
     <svg
       className={className}

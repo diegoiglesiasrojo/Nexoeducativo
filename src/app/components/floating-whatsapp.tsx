@@ -5,7 +5,7 @@ const WHATSAPP_LINK = whatsappLink(
   "Hola! Necesito información sobre los programas de Nexoeducativo.",
 );
 
-export function FloatingWhatsapp() {
+export const FloatingWhatsapp = () => {
   return (
     <a
       href={WHATSAPP_LINK}

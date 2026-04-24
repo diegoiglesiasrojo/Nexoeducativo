@@ -6,7 +6,7 @@ import { Testimonials } from "../components/testimonials";
 import { Faq } from "../components/faq";
 import { CtaSection } from "../components/cta-section";
 
-export function Home() {
+export const Home = () => {
   return (
     <main>
       <Hero />

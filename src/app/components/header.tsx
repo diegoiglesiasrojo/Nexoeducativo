@@ -25,7 +25,7 @@ const navLinks = [
   { href: "/#contacto", label: "Contacto" },
 ];
 
-export function Header() {
+export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [coursesOpen, setCoursesOpen] = useState(false);

@@ -6,7 +6,7 @@ const WHATSAPP_LINK = whatsappLink(
   "Hola! Me gustaría recibir información sobre los programas de Nexoeducativo.",
 );
 
-export function Hero() {
+export const Hero = () => {
   const scrollToCourses = () => {
     document.getElementById("cursos")?.scrollIntoView({ behavior: "smooth" });
   };

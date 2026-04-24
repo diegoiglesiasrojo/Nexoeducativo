@@ -10,7 +10,7 @@ import { Actualizaciones } from "./pages/Actualizaciones";
 import { Tramos } from "./pages/Tramos";
 import { Especializaciones } from "./pages/Especializaciones";
 
-function ScrollToHash() {
+const ScrollToHash = () => {
   const { hash, pathname } = useLocation();
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function ScrollToHash() {
   return null;
 }
 
-export default function App() {
+const App = () => {
   return (
     <ThemeProvider>
       <BrowserRouter>
@@ -49,3 +49,5 @@ export default function App() {
     </ThemeProvider>
   );
 }
+
+export default App;

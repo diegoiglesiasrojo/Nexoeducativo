@@ -6,7 +6,7 @@ const WHATSAPP_LINK = whatsappLink(
   "Hola! Quiero consultar sobre los programas de formación de Nexoeducativo.",
 );
 
-export function CtaSection() {
+export const CtaSection = () => {
   return (
     <section
       id="contacto"

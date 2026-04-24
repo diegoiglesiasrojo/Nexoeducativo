@@ -21,7 +21,7 @@ const carouselImages = [
   },
 ];
 
-export function Carousel() {
+export const Carousel = () => {
   const settings = {
     dots: true,
     infinite: true,

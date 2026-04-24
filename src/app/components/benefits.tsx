@@ -47,7 +47,7 @@ const benefits = [
   },
 ];
 
-export function Benefits() {
+export const Benefits = () => {
   return (
     <section
       id="beneficios"

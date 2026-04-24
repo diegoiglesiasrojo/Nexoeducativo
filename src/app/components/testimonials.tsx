@@ -28,7 +28,7 @@ const testimonials = [
   },
 ];
 
-export function Testimonials() {
+export const Testimonials = () => {
   return (
     <section
       id="testimonios"

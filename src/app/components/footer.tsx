@@ -37,7 +37,7 @@ const emailLink = {
   label: "Email",
 };
 
-export function Footer() {
+export const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [coursesOpen, setCoursesOpen] = useState(false);
   const coursesRef = useRef<HTMLLIElement>(null);
