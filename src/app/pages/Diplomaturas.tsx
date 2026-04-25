@@ -1,4 +1,12 @@
-import { Clock, Monitor, BookOpen, Users, Target, CheckCircle, ArrowRight } from "lucide-react";
+import {
+  Clock,
+  Monitor,
+  BookOpen,
+  Users,
+  Target,
+  CheckCircle,
+  ArrowRight,
+} from "lucide-react";
 import { whatsappLink, COLORS } from "../constants";
 import { WhatsAppIcon } from "../components/whatsapp-icon";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
@@ -7,11 +15,13 @@ const diplomaturas = [
   {
     id: 1,
     title: "Diplomatura en Lectura, Escritura y Alfabetización Académica",
-    tagline: "Fortalecé las competencias docentes en enseñanza de la lectura y escritura",
+    tagline:
+      "Fortalecé las competencias docentes en enseñanza de la lectura y escritura",
     duration: "630 horas reloj",
     modalidad: "100% virtual y a distancia",
     inscripcion: "Permanente",
-    image: "https://images.unsplash.com/photo-1761208662734-fb46f1398551?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFjaGVyJTIwcmVhZGluZyUyMHdyaXRpbmclMjBjbGFzc3Jvb218ZW58MXx8fHwxNzc3MDc1NDQ4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image:
+      "https://images.unsplash.com/photo-1761208662734-fb46f1398551?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFjaGVyJTIwcmVhZGluZyUyMHdyaXRpbmclMjBjbGFzc3Jvb218ZW58MXx8fHwxNzc3MDc1NDQ4fDA&ixlib=rb-4.1.0&q=80&w=1080",
     description:
       "Propuesta de formación integral orientada a fortalecer las competencias docentes en la enseñanza de la lectura y la escritura en todos los niveles educativos, con especial énfasis en la alfabetización académica y los desafíos de la cultura digital.",
     aprendizajes: [
@@ -37,7 +47,8 @@ const diplomaturas = [
       "Materiales teóricos y actividades prácticas",
       "Foros de intercambio y acompañamiento tutorial",
     ],
-    whatsappMsg: "Hola! Quiero más información sobre la Diplomatura en Lectura, Escritura y Alfabetización Académica.",
+    whatsappMsg:
+      "Hola! Quiero más información sobre la Diplomatura en Lectura, Escritura y Alfabetización Académica.",
     badge: "Puntaje Docente",
   },
   {
@@ -47,7 +58,8 @@ const diplomaturas = [
     duration: "630 horas reloj",
     modalidad: "100% virtual y asincrónica",
     inscripcion: "Permanente",
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwZWR1Y2F0aW9uJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NzcwNzU0NDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwZWR1Y2F0aW9uJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NzcwNzU0NDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
     description:
       "Propuesta formativa innovadora que integra pedagogía e inteligencia artificial para transformar las prácticas educativas. Brinda herramientas para comprender el impacto de la IA, desarrollar proyectos pedagógicos innovadores y aplicar tecnologías emergentes de manera ética, crítica y contextualizada.",
     aprendizajes: [
@@ -65,7 +77,8 @@ const diplomaturas = [
       "Profesionales de la educación",
       "Interesados en innovar con IA",
     ],
-    requisito: "Título secundario completo. No se requiere experiencia previa en IA.",
+    requisito:
+      "Título secundario completo. No se requiere experiencia previa en IA.",
     modalidadDetalle: [
       "Cursada totalmente asincrónica",
       "Acceso a plataforma virtual las 24 hs",
@@ -73,7 +86,8 @@ const diplomaturas = [
       "Actividades prácticas por módulo",
       "Foros de intercambio y acompañamiento",
     ],
-    whatsappMsg: "Hola! Quiero más información sobre la Diplomatura en Innovación Educativa con Inteligencia Artificial.",
+    whatsappMsg:
+      "Hola! Quiero más información sobre la Diplomatura en Innovación Educativa con Inteligencia Artificial.",
     badge: "Puntaje Docente",
   },
 ];
@@ -96,7 +110,9 @@ export const Diplomaturas = () => {
             Diplomaturas
           </h1>
           <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto mb-10">
-            Programas de formación integral con titulación oficial. Potenciá tu carrera docente con una especialización reconocida y de alto impacto.
+            Programas de formación integral con titulación oficial. Potenciá tu
+            carrera docente con una especialización reconocida y de alto
+            impacto.
           </p>
           <div className="flex flex-wrap gap-8 justify-center">
             <div className="text-center">
@@ -109,7 +125,9 @@ export const Diplomaturas = () => {
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-white">2</div>
-              <div className="text-blue-200 text-sm mt-1">Diplomaturas disponibles</div>
+              <div className="text-blue-200 text-sm mt-1">
+                Diplomaturas disponibles
+              </div>
             </div>
           </div>
         </div>
@@ -124,37 +142,44 @@ export const Diplomaturas = () => {
                 key={curso.id}
                 className={`${COLORS.card.default} rounded-2xl shadow-lg overflow-hidden`}
               >
-                <div className={`grid lg:grid-cols-2 ${index % 2 === 1 ? "lg:grid-flow-dense" : ""}`}>
+                <div
+                  className={`grid lg:grid-cols-2 ${index % 2 === 1 ? "lg:grid-flow-dense" : ""}`}
+                >
                   {/* Image */}
-                  <div className={`relative h-64 lg:h-auto min-h-[300px] ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
+                  <div
+                    className={`relative h-64 lg:h-auto min-h-[300px] ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
+                  >
                     <ImageWithFallback
                       src={curso.image}
                       alt={curso.title}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-black/20" />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full">
-                        {curso.badge}
-                      </span>
-                    </div>
                   </div>
 
                   {/* Content */}
-                  <div className={`p-6 sm:p-8 lg:p-10 flex flex-col ${index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}`}>
+                  <div
+                    className={`p-6 sm:p-8 lg:p-10 flex flex-col ${index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}`}
+                  >
                     {/* Meta */}
                     <div className="flex flex-wrap gap-3 mb-5">
-                      <span className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full ${COLORS.icon.brandBgLight}`}>
+                      <span
+                        className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full ${COLORS.icon.brandBgLight}`}
+                      >
                         <Clock className="w-3.5 h-3.5" />
                         {curso.duration}
                       </span>
-                      <span className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400`}>
+                      <span
+                        className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400`}
+                      >
                         <Monitor className="w-3.5 h-3.5" />
                         {curso.modalidad}
                       </span>
                     </div>
 
-                    <h2 className={`text-xl sm:text-2xl font-bold ${COLORS.text.heading} mb-3`}>
+                    <h2
+                      className={`text-xl sm:text-2xl font-bold ${COLORS.text.heading} mb-3`}
+                    >
                       {curso.title}
                     </h2>
                     <p className={`${COLORS.text.body} mb-6 leading-relaxed`}>
@@ -164,19 +189,30 @@ export const Diplomaturas = () => {
                     <div className="grid sm:grid-cols-2 gap-6 mb-8">
                       {/* Aprendizajes */}
                       <div>
-                        <h3 className={`flex items-center gap-2 font-semibold ${COLORS.text.heading} mb-3`}>
-                          <Target className={`w-4 h-4 ${COLORS.icon.brandColor}`} />
+                        <h3
+                          className={`flex items-center gap-2 font-semibold ${COLORS.text.heading} mb-3`}
+                        >
+                          <Target
+                            className={`w-4 h-4 ${COLORS.icon.brandColor}`}
+                          />
                           ¿Qué vas a aprender?
                         </h3>
                         <ul className="space-y-2">
                           {curso.aprendizajes.slice(0, 5).map((item, i) => (
-                            <li key={i} className={`flex items-start gap-2 text-sm ${COLORS.text.body}`}>
-                              <CheckCircle className={`w-4 h-4 ${COLORS.icon.brandColor} shrink-0 mt-0.5`} />
+                            <li
+                              key={i}
+                              className={`flex items-start gap-2 text-sm ${COLORS.text.body}`}
+                            >
+                              <CheckCircle
+                                className={`w-4 h-4 ${COLORS.icon.brandColor} shrink-0 mt-0.5`}
+                              />
                               {item}
                             </li>
                           ))}
                           {curso.aprendizajes.length > 5 && (
-                            <li className={`text-sm ${COLORS.text.brand} font-medium`}>
+                            <li
+                              className={`text-sm ${COLORS.text.brand} font-medium`}
+                            >
                               +{curso.aprendizajes.length - 5} contenidos más
                             </li>
                           )}
@@ -186,29 +222,45 @@ export const Diplomaturas = () => {
                       {/* Destinatarios + Modalidad */}
                       <div className="space-y-5">
                         <div>
-                          <h3 className={`flex items-center gap-2 font-semibold ${COLORS.text.heading} mb-3`}>
-                            <Users className={`w-4 h-4 ${COLORS.icon.brandColor}`} />
+                          <h3
+                            className={`flex items-center gap-2 font-semibold ${COLORS.text.heading} mb-3`}
+                          >
+                            <Users
+                              className={`w-4 h-4 ${COLORS.icon.brandColor}`}
+                            />
                             Destinatarios
                           </h3>
                           <ul className="space-y-1.5">
                             {curso.destinatarios.map((d, i) => (
-                              <li key={i} className={`text-sm ${COLORS.text.body}`}>
+                              <li
+                                key={i}
+                                className={`text-sm ${COLORS.text.body}`}
+                              >
                                 · {d}
                               </li>
                             ))}
                           </ul>
-                          <p className={`text-xs ${COLORS.text.muted} mt-2 italic`}>
+                          <p
+                            className={`text-xs ${COLORS.text.muted} mt-2 italic`}
+                          >
                             Requisito: {curso.requisito}
                           </p>
                         </div>
                         <div>
-                          <h3 className={`flex items-center gap-2 font-semibold ${COLORS.text.heading} mb-2`}>
-                            <Monitor className={`w-4 h-4 ${COLORS.icon.brandColor}`} />
+                          <h3
+                            className={`flex items-center gap-2 font-semibold ${COLORS.text.heading} mb-2`}
+                          >
+                            <Monitor
+                              className={`w-4 h-4 ${COLORS.icon.brandColor}`}
+                            />
                             Modalidad
                           </h3>
                           <ul className="space-y-1">
                             {curso.modalidadDetalle.slice(0, 3).map((m, i) => (
-                              <li key={i} className={`text-sm ${COLORS.text.body}`}>
+                              <li
+                                key={i}
+                                className={`text-sm ${COLORS.text.body}`}
+                              >
                                 · {m}
                               </li>
                             ))}
@@ -219,16 +271,9 @@ export const Diplomaturas = () => {
 
                     <div className="mt-auto flex flex-col sm:flex-row gap-3">
                       <a
-                        href={whatsappLink(curso.whatsappMsg)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`inline-flex items-center justify-center gap-2 px-6 py-3 ${COLORS.button.primary} rounded-lg font-semibold transition-all hover:scale-[1.02] shadow-md`}
-                      >
-                        <WhatsAppIcon className="w-5 h-5" />
-                        Consultar por WhatsApp
-                      </a>
-                      <a
-                        href={whatsappLink(`Hola! Quiero más información y el costo de la ${curso.title}`)}
+                        href={whatsappLink(
+                          `Hola! Quiero más información y el costo de la ${curso.title}`,
+                        )}
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`inline-flex items-center justify-center gap-2 px-6 py-3 ${COLORS.button.secondary} rounded-lg font-semibold transition-all`}
@@ -252,10 +297,13 @@ export const Diplomaturas = () => {
             ¿Listo para comenzar tu Diplomatura?
           </h2>
           <p className="text-blue-100 mb-8 text-lg">
-            Inscripción permanente · Modalidad 100% virtual · Consultá sin compromiso
+            Inscripción permanente · Modalidad 100% virtual · Consultá sin
+            compromiso
           </p>
           <a
-            href={whatsappLink("Hola! Quiero información sobre las Diplomaturas de Nexoeducativo.")}
+            href={whatsappLink(
+              "Hola! Quiero información sobre las Diplomaturas de Nexoeducativo.",
+            )}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-gray-100 text-blue-600 rounded-lg font-semibold transition-all hover:scale-105 shadow-lg"
