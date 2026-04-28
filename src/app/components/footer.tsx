@@ -203,17 +203,35 @@ export const Footer = () => {
             className={`flex flex-col sm:flex-row justify-between items-center gap-4 text-sm ${COLORS.footer.mutedText}`}
           >
             <p>© {currentYear} Nexoeducativo. Todos los derechos reservados.</p>
-            <a
-              href={ENCIENDE_NEGOCIO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${COLORS.footer.link} transition-colors`}
-            >
-              Desarrollado por Enciende Negocio
-            </a>
+            <div className="flex items-center gap-4">
+              <a
+                href="/terminos_y_condiciones_enciendenegocio.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${COLORS.footer.link} transition-colors`}
+              >
+                Términos y Condiciones
+              </a>
+              <a
+                href="/politica_privacidad_enciendenegocio.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${COLORS.footer.link} transition-colors`}
+              >
+                Política de Privacidad
+              </a>
+              <a
+                href={ENCIENDE_NEGOCIO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${COLORS.footer.link} transition-colors`}
+              >
+                Desarrollado por Enciende Negocio
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </footer>
   );
-}
+};

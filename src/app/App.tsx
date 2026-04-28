@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ThemeProvider } from "./components/theme-provider";
+import { LoadingScreen } from "./components/loading-screen";
+import { CookieBanner } from "./components/cookie-banner";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 import { FloatingWhatsapp } from "./components/floating-whatsapp";
@@ -26,11 +28,14 @@ const ScrollToHash = () => {
   }, [hash, pathname]);
 
   return null;
-}
+};
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
   return (
     <ThemeProvider>
+      {loading && <LoadingScreen onDone={() => setLoading(false)} />}
       <BrowserRouter>
         <ScrollToHash />
         <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
@@ -45,9 +50,10 @@ const App = () => {
           <Footer />
           <FloatingWhatsapp />
         </div>
+        <CookieBanner />
       </BrowserRouter>
     </ThemeProvider>
   );
-}
+};
 
 export default App;
