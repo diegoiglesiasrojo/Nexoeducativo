@@ -5,7 +5,8 @@ import logoImg from "../../imports/logo.png";
 import {
   whatsappLink,
   SOCIAL_LINKS,
-  ENCIENDE_NEGOCIO_URL,
+  DEVELOPER_URL,
+  DEVELOPER_NAME,
   COLORS,
 } from "../constants";
 
@@ -205,7 +206,7 @@ export const Footer = () => {
             <p>© {currentYear} Nexoeducativo. Todos los derechos reservados.</p>
             <div className="flex items-center gap-4">
               <a
-                href="/terminos_y_condiciones_enciendenegocio.pdf"
+                href="/nexoeducativo_terminos_y_condiciones.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${COLORS.footer.link} transition-colors`}
@@ -213,7 +214,7 @@ export const Footer = () => {
                 Términos y Condiciones
               </a>
               <a
-                href="/politica_privacidad_enciendenegocio.pdf"
+                href="/nexoeducativo_politica_de_privacidad.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${COLORS.footer.link} transition-colors`}
@@ -221,12 +222,12 @@ export const Footer = () => {
                 Política de Privacidad
               </a>
               <a
-                href={ENCIENDE_NEGOCIO_URL}
+                href={DEVELOPER_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${COLORS.footer.link} transition-colors`}
               >
-                Desarrollado por Enciende Negocio
+                Desarrollado por {DEVELOPER_NAME}
               </a>
             </div>
           </div>

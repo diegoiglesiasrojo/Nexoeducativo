@@ -9,7 +9,11 @@ export const SOCIAL_LINKS = {
   email: "nexoeducativo26@gmail.com",
 };
 
-export const ENCIENDE_NEGOCIO_URL = "https://enciendenegocio.com/";
+export const DEVELOPER_URL =
+  import.meta.env.VITE_DEVELOPER_URL ?? "https://enciendenegocio.com/";
+
+export const DEVELOPER_NAME: string =
+  import.meta.env.VITE_DEVELOPER_NAME ?? "Enciende Negocio";
 
 // ─── Color tokens ────────────────────────────────────────────────────────────
 
